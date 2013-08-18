@@ -1,0 +1,59 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: monospace, sans-serif;
+    font-size: 100%;
+    overflow: auto;
+    }
+
+.container {
+    padding: 0 0.5rem;
+    }
+
+.inline{
+    display: inline;
+    }
+
+a {
+    text-decoration: none;
+    }
+
+/* Header
+---------------------------------------------------------------------------------- */
+header {
+    background: #a6accc;
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    }
+
+header ul {
+    padding: 0;
+    list-style: none;
+    }
+
+header ul > li {
+    display: inline-block;
+    }
+
+header ul > li a {
+    color: #fff;
+    display: block;
+    padding: 0.5rem 0.5rem;
+    }
+
+header ul > li a:hover{
+    text-decoration: underline;
+    }
+
+header ul > li a.active {
+    background: white;
+    color: #000;
+    }
+
+/* Content
+---------------------------------------------------------------------------------- */
+#content {
+    margin: 3rem 0 1rem 0;
+    }
+
