@@ -1,0 +1,10 @@
+{
+    "name": "JelmerD/LogWatcher",
+    "type": "cakephp-plugin",
+    "description": "A CakePHP Plugin to view logfiles more easily",
+    "homepage": "http://github.com/JelmerD/LogWatcher",
+    "require": {
+        "php": ">=5.2.8",
+        "composer/installers": "*"
+    }
+}
