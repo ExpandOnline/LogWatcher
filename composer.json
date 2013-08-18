@@ -1,5 +1,5 @@
 {
-    "name": "JelmerD/LogWatcher",
+    "name": "jelmerd/logwatcher",
     "type": "cakephp-plugin",
     "description": "A CakePHP Plugin to view logfiles more easily",
     "homepage": "http://github.com/JelmerD/LogWatcher",
