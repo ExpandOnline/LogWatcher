@@ -1,6 +1,6 @@
 <div class="container">
     <div class="inline">
-        <?php echo $this->Html->link(__('&laquo; Back'), Configure::read('LogWatcher.homepage')); ?>
+        <?php echo $this->Html->link(__('&laquo; Back'), Configure::read('LogWatcher.homepage'), array('escape' => 'false')); ?>
     </div>
     <div class="overflow-x inline">
         <?php
