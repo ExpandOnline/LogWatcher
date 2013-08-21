@@ -16,6 +16,11 @@ class LogWatchersController extends AppController {
      * @throws MethodNotAllowedException
      */
     public function index(){
+        if ($this->request->is('post') && $log = $this->request->data('LogWatcher.log')){
+            if (!$this->request->query('json')){
+                $this->redirect(array('log' => $log, '#' => 'bottom'));
+            }
+        }
         # if the default layout is overwritten..
         if (!$this->layout = Configure::read('LogWatcher.layout')){
             $this->layout = 'LogWatcher.default';
@@ -26,11 +31,11 @@ class LogWatchersController extends AppController {
 
         # if the log parameter is set .. (noscript access)
         if (isset($this->request->params['log'])){
-            $log = $this->request->params['log'];
+            $this->request->data['LogWatcher']['log'] = $log = $this->request->params['log'];
 
             # if the file doesn't even exist ..
             if (!$this->LogWatcher->fileExists($log)){
-                throw new NotFoundException('Unknown log');
+                throw new NotFoundException(__('Unknown log'));
             }
 
             # if the accessed log isn't in the whitelist
@@ -39,12 +44,18 @@ class LogWatchersController extends AppController {
             }
 
             # if a json formatted output is requested
-            if (isset($this->request->params['named']['json'])){
+            if ($this->request->query('json')){
                 $this->autoRender = false;
-                echo json_encode(array(
-                    'content' => $this->LogWatcher->getContent($log),
-                    'hash' => $this->LogWatcher->getHash($log)
-                ));
+                $hash = $this->LogWatcher->getHash($log);
+                if ($this->request->query('hashOnly')){
+                    echo $hash;
+                } else {
+                    echo json_encode(array(
+                        'content' => $this->LogWatcher->getContent($log),
+                        'hash' => $hash,
+                        'time' => date('H:i:s')
+                    ));
+                }
                 $this->shutdownProcess();
                 $this->_stop();
             }

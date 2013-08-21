@@ -24,6 +24,7 @@ if (Configure::read('LogWatcher.layout')) {
             echo __('Choose a log to watch from the navigation above');
         }
         ?>
+        <a name="bottom"></a>
     </div>
 <?php
 # if another layout is set, echo the header here as well
