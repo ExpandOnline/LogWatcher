@@ -1,11 +1,26 @@
 {
     "name": "jelmerd/log-watcher",
-    "type": "cakephp-plugin",
     "description": "A CakePHP Plugin to view logfiles more easily",
+    "type": "cakephp-plugin",
+    "keywords": ["logging", "cakephp", "debugging"],
     "homepage": "http://github.com/JelmerD/LogWatcher",
     "license": "MIT",
+    "authors": [
+        {
+            "name": "Jelmer Dröge",
+            "homepage": "http://www.avolans.nl",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/JelmerD/LogWatcher/issues",
+        "wiki": "https://github.com/JelmerD/LogWatcher/wiki"
+    },
     "require": {
         "php": ">=5.2.8",
         "composer/installers": "*"
+    },
+    "suggest": {
+        "twitter/bootstrap": "Nice look of the plugin. In the future we will focus on the bootstrap convention completely"
     }
 }
