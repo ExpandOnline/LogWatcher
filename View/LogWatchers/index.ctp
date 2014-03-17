@@ -19,7 +19,7 @@ if (Configure::read('LogWatcher.layout')) {
     <div class="lw-log-container">
         <?php
         if ($this->get('content')) {
-            echo $this->Html->tag('pre', $content);
+            echo $this->Html->tag('pre', h($content));
         } else {
             echo __('Choose a log to watch from the navigation above');
         }
