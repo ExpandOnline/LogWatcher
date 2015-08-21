@@ -1,8 +1,8 @@
 {
-    "name": "jelmerd/log-watcher",
+    "name": "ExpandOnline/LogWatcher",
     "type": "cakephp-plugin",
     "description": "A CakePHP Plugin to view logfiles more easily",
-    "homepage": "http://github.com/JelmerD/LogWatcher",
+    "homepage": "http://github.com/ExpandOnline/LogWatcher",
     "license": "MIT",
     "require": {
         "php": ">=5.2.8",
